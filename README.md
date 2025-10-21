@@ -2,25 +2,25 @@
 
 About This App
 
-Lightweight chat application with a Streamlit frontend and FastAPI backend.
+- Lightweight chat application with a Streamlit frontend and FastAPI backend.
 
-Uses a single LangGraph ReAct agent powered by Groq (ChatGroq) and optional Tavily web search.
+- Uses a single LangGraph ReAct agent powered by Groq (ChatGroq) and optional Tavily web search.
 
-Frontend posts to POST /chat; backend validates the model, builds the agent with your system prompt and search setting, then returns the answer.
+- Frontend posts to POST /chat; backend validates the model, builds the agent with your system prompt and search setting, then returns the answer.
 
-Runs locally or in Docker; CI/CD via Jenkins to AWS ECS Fargate.
+- Runs locally or in Docker; CI/CD via Jenkins to AWS ECS Fargate.
 
 Add More Agents
 
-Define additional agent builders (different prompts/tools/models) in app/core/ai_agent.py.
+- Define additional agent builders (different prompts/tools/models) in app/core/ai_agent.py.
 
-Create a simple agent registry (e.g., {"default": ..., "researcher": ..., "analyst": ...}) and select from it at runtime.
+- Create a simple agent registry (e.g., {"default": ..., "researcher": ..., "analyst": ...}) and select from it at runtime.
 
-Extend the API request schema to include agent_name and route to the chosen builder in app/backend/api.py.
+- Extend the API request schema to include agent_name and route to the chosen builder in app/backend/api.py.
 
-Update the Streamlit UI to add an “Agent” dropdown and include agent_name in the payload in app/frontend/ui.py.
+- Update the Streamlit UI to add an “Agent” dropdown and include agent_name in the payload in app/frontend/ui.py.
 
-Optional: Use LangGraph to wire multiple agents into a collaboration graph (router/supervisor, debate, or hand‑off patterns).
+- Optional: Use LangGraph to wire multiple agents into a collaboration graph (router/supervisor, debate, or hand‑off patterns).
 
 
 A lightweight multi‑agent chat system featuring:
